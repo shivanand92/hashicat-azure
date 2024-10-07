@@ -2,10 +2,6 @@ module "network" {
   source  = "app.terraform.io/Translab-Testing/network/azurerm"
   version = "3.5.0"
   # insert required variables here
-  resource_group_name = "GauravResourceGroup"
-   location            = "Central India" 
-   address_space = ["10.0.0.0/16"]
-   subnet_names = ["subnet1"]
-
-
+  resource_group_name = azurerm_resource_group.myresourcegroup.name
+  use_for_each = true
 }
